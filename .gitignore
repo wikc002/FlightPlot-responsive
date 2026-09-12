@@ -1,0 +1,31 @@
+# Java and IDE output
+*.class
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.idea/
+
+# Reproducible local output
+/build/
+/out/
+/verification-*/
+/release/
+/delivery/
+
+# Private flight logs and exports
+/日志示例/
+*.BIN
+*.bin
+*.ulg
+*.px4log
+*.log
+*.kml
+*.gpx
+*.fplot
+
+# Operating-system files
+.DS_Store
+Thumbs.db

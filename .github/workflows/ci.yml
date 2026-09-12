@@ -1,0 +1,30 @@
+name: build-and-test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-java-8:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Build and run self-contained regression
+        shell: pwsh
+        run: ./verify-responsive.ps1
+      - name: Package 0.5.8
+        shell: pwsh
+        run: ./package-responsive.ps1
+      - name: Upload release artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: FlightPlot-0.5.8
+          path: release/0.5.8/*

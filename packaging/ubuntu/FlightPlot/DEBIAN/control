@@ -1,0 +1,9 @@
+Package: FlightPlot
+Version: 0.5.8
+Section: devel
+Priority: optional
+Architecture: all
+Depends: default-jre (>= 2:1.8)
+Maintainer: wikc002
+Homepage: https://github.com/wikc002/FlightPlot-responsive
+Description: PX4 and ArduPilot flight log plotter
